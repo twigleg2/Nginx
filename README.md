@@ -6,7 +6,7 @@ then, create the redirection rule:\
 `cd /etc/nginx/sites-available`\
 `sudo touch <name>.gavenfinch.site.conf`\
 `sudo vim <name>.gavenfinch.site.conf`\
-paste the following:\
+paste the following:
 ```
 server {
   listen 80;
@@ -18,7 +18,7 @@ server {
     try_files $uri $uri/ =404;
   }
 }
-```\
+```
 now enable it with a symbolic link:\
 `sudo ln -s /etc/nginx/sites-available/<name>.gavenfinch.site.conf /etc/nginx/sites-enabled/`\
 reload Nginx:\
