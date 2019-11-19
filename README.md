@@ -25,7 +25,8 @@ reload Nginx:\
 `sudo service nginx reload`\
 
 ## Configure Nginx to redirect ports with node:
-same as above, but paste the following into the .conf file instead:\
+Remember to `npm install`!
+Same as above, but paste the following into the .conf file instead:\
 ```
 server {
   listen 80;
@@ -42,4 +43,5 @@ server {
 ```
 
 ## use pm2 to keep node services running:
-pm2 start <server.js>
+pm2 start <server.js> --name <name>
+pm2 list
