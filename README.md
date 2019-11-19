@@ -31,7 +31,18 @@ Same as above, but paste the following into the .conf file instead:\
 server {
   listen 80;
   server_name <name>.gavenfinch.site;
+  # if your static files are in another directory, such as public,
+  # make sure to specify that!
+  root /var/www/<name>.gavenfinch.site;
+  index index.html;
+  default_type "text/html";
   location / {
+    # Serve static files from the root location above.
+    try_files $uri $uri/ /index.html;
+  }
+  location /api {
+    # Serve api requests here. This will connect to your node
+    # process that is running on port <port>.
     proxy_pass http://localhost:<port>;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
