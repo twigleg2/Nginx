@@ -54,5 +54,5 @@ server {
 ```
 
 ## use pm2 to keep node services running:
-pm2 start <server.js> --name <name>
+pm2 start <server.js> --name <name>\
 pm2 list
